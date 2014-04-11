@@ -1,0 +1,83 @@
+ <!-- Intro -->
+            <section id="intro">
+                <div class="intro-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>Ditch the piggy bank. Bring home the <strong>bacon</strong>.</h2>
+                                <p class="rethink">it's time to rethink savings. &nbsp;join the fun in:</p>
+
+                                <div class="timer">
+                                    <div class="time-wrapper">
+                                        <span class="days"></span> <br>Days
+                                    </div>
+                                    <div class="time-wrapper">
+                                        <span class="hours"></span> <br>Hours
+                                    </div>
+                                    <div class="time-wrapper">
+                                        <span class="minutes"></span> <br>Minutes
+                                    </div>
+                                    <div class="time-wrapper">
+                                        <span class="seconds"></span> <br>Seconds
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row subscribe-section-alt">
+                            <div class="col-md-8 col-md-offset-2 form-holder">
+                                <h3>sign up to receive early access:</h3>
+                                   <div class="subscribe">
+                                   <div class="error-message"></div>
+                                    <form method="post" action="php/subscribe.php">
+                                        <div class="form-group">
+                                            <label class="sr-only">Email</label>
+                                            <input type="text" id="email" name="email" class="form-control form-control-alt" placeholder="Enter your email here">
+                                        </div>
+                                        <button type="submit" class="btn btn-3 btn-lg">I &nbsp;want &nbsp;bacon</button>
+                                    </form>
+                                    <div class="success-message"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End intro -->
+
+            <script>
+
+                function validEmail(email) {
+                  var reg = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/i
+                  return (reg.test(email) && email.length > 6);
+                }
+
+                $("form").on("submit", function(e){
+                  e.preventDefault();
+                   $(".error-message").html("");
+
+                  if (validEmail($("#email").val())){
+
+                   $.ajax({
+                      url: "/initial_users",
+                      type: "POST",
+                      data: "user[" + $(this).serialize(),
+                      context: this,
+                      success: function(){ 
+                        console.log("success");
+                        $("form").remove();
+                        $(".success-message").html("You rock! Thanks for signing up. We'll be in touch.");
+                      }
+                    })
+
+                  } else {
+                    $(".error-message").html("Woops! Looks like that's not a valid email address.");
+                  }
+
+                })
+
+
+
+
+    
+
+            </script>

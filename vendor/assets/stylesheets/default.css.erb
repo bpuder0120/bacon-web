@@ -1,0 +1,523 @@
+/*----------
+Theme Name: Linum
+Theme Description: Responsive Launching Soon Template
+Version: 1.2
+Author: theme4less@gmail.com
+----------*/
+
+/*---------- General ----------*/
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+a {
+    color: #bf6060;
+    -o-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+}
+a:hover,
+a:focus {
+    color: #7f4040;
+    text-decoration: none;
+}
+.margin-top-15px {
+    margin-top: 15px;
+}
+.spacer-25px {
+    height: 25px;
+}
+.spacer-50px {
+    height: 50px;
+}
+
+/*---------- Buttons ----------*/
+.btn {
+    border: 0 none;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.btn-1 {
+    background-color: #bf6060;
+    border-radius: 0px;
+    color: #fff;
+    padding: 20px 30px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: 0.3s;
+}
+.btn-1:hover,
+.btn-1:focus {
+    background-color: #7f4040;
+    color: #fff;
+}
+.btn-1-bordered {
+    background-color: #bf6060;
+    border: 1px solid #bf6060;
+    border-radius: 0px;
+    color: #fff;
+    padding: 20px 30px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: 0.3s;
+}
+.btn-1-bordered:hover,
+.btn-1-bordered:focus {
+    background-color: #7f4040;
+    border: 1px solid #7f4040;
+    color: #fff;
+}
+.btn-2 {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    padding: 20px 30px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.btn-2:hover,
+.btn-2:focus {
+    background-color: #7f4040;
+    border: 1px solid #7f4040;
+    color: #fff;
+}
+.btn-3 {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0px;
+    padding: 20px 30px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.btn-3:hover,
+.btn-3:focus {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #7f4040;
+}
+.btn-4 {
+    background: none;
+    border-radius: 0px;
+    border: none;
+    color: #fff;
+    padding: 20px 30px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: 0.3s;
+}
+.btn-4:hover,
+.btn-4:focus {
+    background: #7f4040;
+    border-radius: 0px;
+    border: none;
+    color: #fff;
+}
+.btn-lg {
+    border-radius: 0px;
+    width: 300px;
+}
+
+/*---------- Forms ----------*/
+.form-control {
+    background: none;
+    border: 1px solid #bf6060;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #bf6060;
+    display: block;
+    font-size: 14px;
+    height: 50px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s,
+    width: 100%;
+}
+.form-control-alt {
+    background: url("<%= image_path 'transparent.png' ");
+    border: 2px solid #fff;
+    color: #111;
+}
+.form-control:focus {
+    border-color: #7f4040;
+    color: #7f4040;
+    box-shadow: none;
+}
+.form-control::-moz-placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+/*---------- Navigation ----------*/
+nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    background: url('../img/nav-bg.png');
+    font-size: 13px;
+    text-align: center;
+    line-height: 32px;
+}
+nav a {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 5px 0;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+nav a:hover {
+    color: #bf6060;
+    text-decoration: none;
+}
+nav a:focus {
+    color: #fff;
+}
+.show-menu {
+    position: absolute;
+    top: -6px;
+    right: 115px;
+    padding: 0px 20px;
+    z-index: 999;
+    text-align: center;
+}
+.hide-menu {
+    position: absolute;
+    top: -6px;
+    right: 100px;
+    padding: 0px 20px;
+    z-index: 999;
+    text-align: center;
+}
+.show-menu a,
+.hide-menu a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding-top: 10px;
+    background: url('../img/nav-bg.png');
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: none;
+    color: #ccc;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.show-menu a:hover,
+.hide-menu a:hover {
+    color: #fff;
+}
+.fixed {
+    position: fixed;
+}
+
+/*---------- Intro ----------*/
+#intro {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.intro-body {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 75px 0 40px 0;
+}
+.intro-body h1 > a {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 300;
+    padding: 25px 45px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    border-radius: 85px;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+.intro-body h1 > a:hover {
+    color: #ffc0c0;
+    border: 2px solid #ffc0c0;
+}
+.intro-body h2 {
+    font-size: 46px;
+    font-weight: 100;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+.intro-body p {
+    margin: 40px 0 10px 0;
+    padding: 0 320px;
+    font-size: 22px;
+    line-height: 36px;
+}
+.timer {
+    margin-top: 60px;
+}
+.timer .time-wrapper {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 10px;
+    padding-top: 5px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    cursor: pointer;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.timer .time-wrapper:hover {
+    background: #bf6060;
+    border: 1px solid #bf6060;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
+
+/*---------- Subscribe ----------*/
+#subscribe {
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+.subscribe-section {
+    text-align: center;
+}
+.subscribe-section h3 {
+    font-size: 46px;
+    font-weight: 100;
+    color: #333;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+
+.subscribe-section p {
+    margin-top: 30px;
+    font-size: 22px;
+    padding: 0 100px;
+    color: #555;
+    line-height: 36px;
+}
+.subscribe-section form {
+    margin-top: 40px;
+}
+.subscribe-section-alt {
+    text-align: center;
+}
+.subscribe-section-alt h3 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+.subscribe-section-alt p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    padding: 0;
+    line-height: 30px;
+}
+
+
+/*---------- Project ----------*/
+#project {
+    color: #fff;
+    height: auto;
+    padding-bottom: 100px;
+    padding-top: 60px;
+}
+.project-section {
+    text-align: center;
+}
+.project-section h3 {
+    font-size: 46px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+.project-section h4 {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.project-section p {
+    font-size: 22px;
+    line-height: 36px;
+    margin-top: 30px;
+}
+.project-figure {
+    padding-top: 50px;
+}
+.text {
+    padding: 60px 50px 0;
+}
+
+
+/*---------- Reviews ----------*/
+#reviews {
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+.reviews-section {
+    text-align: center;
+}
+.reviews-section h3 {
+    font-size: 46px;
+    font-weight: 100;
+    color: #333;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+.reviews-section p {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 300;
+    color: #555;
+    line-height: 36px;
+}
+.reviews-single {
+    display: inline-block;
+}
+.reviews-single p {
+    display: none;
+}
+.reviews-single-image {
+    display: inline-block;
+    width: 60px;
+    margin: 0 5px 10px 5px;
+}
+.reviews-single-image img {
+    width: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.reviews-active {
+    padding-bottom: 20px;
+}
+.reviews-quote {
+    font-family: Georgia, serif;
+    font-size: 70px;
+    line-height: 70px;
+    color: #ccc;
+}
+
+/*---------- Team ----------*/
+#team {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+.team-section {
+    color: #fff;
+    text-align: center;
+}
+.team-section h3 {
+    font-size: 46px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+
+.team-section p {
+    margin-top: 30px;
+    font-size: 22px;
+    line-height: 36px;
+}
+.team-section .team-short {
+    font-size: 16px;
+    margin-top: -10px;
+}
+.team-figure {
+    padding-top: 50px;
+}
+
+/*---------- Contact ----------*/
+#contact {
+    background-color: #fff;
+    padding-bottom: 100px;
+    padding-top: 60px;
+}
+.contact-section {
+    text-align: center;
+}
+.contact-section h3 {
+    color: #333;
+    font-size: 46px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 50px;
+}
+.contact-section p {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 300;
+    color: #555;
+    line-height: 36px;
+}
+.contact-section form {
+    margin-top: 40px;
+}
+.contact-form p {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+}
+
+/*---------- Footer ----------*/
+#footer {
+    background-color: #5f3030;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+.footer {
+    color: #fff;
+    text-align: center;
+}

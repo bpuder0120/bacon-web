@@ -1,0 +1,106 @@
+@media (min-width: 980px) and (max-width: 1200px) {
+	.show-menu,
+	.hide-menu {
+		right: 50px;
+	}
+	.intro-body p {
+		padding: 0 120px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    .timer .days-wrapper,
+    .timer .hours-wrapper,
+    .timer .minutes-wrapper,
+    .timer .seconds-wrapper {
+        width: 140px;
+        height: 120px;
+        margin: 0 7px;
+        padding-top: 5px;
+    }
+    .timer .days, .timer .hours, .timer .minutes, .timer .seconds {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .intro-body p,
+    .project-section p,
+    .team-section p,
+    .contact-section p {
+    	padding: 0;
+    }
+}
+
+@media (max-width: 980px) {
+	.show-menu {
+		right: 30px;
+	}
+	
+	.hide-menu {
+		position: static;
+		top: auto;
+		right: auto;
+		z-index: auto;
+	}
+	.hide-menu a {
+		padding-top: 0;
+	}
+	.text {
+		padding: 0px 50px;
+	}
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .intro-body h2,
+    .subscribe-section h3,
+    .project-section h3,
+    .reviews-section h3,
+    .team-section h3,
+    .contact-section h3 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+    .intro-body p,
+    .subscribe-section p,
+    .project-section p,
+    .reviews-section p,
+    .team-section p,
+    .contact-section p {
+	padding: 0px;
+    }
+    .timer .time-wrapper {
+        width: 120px;
+        height: 120px;
+        margin: 7px;
+        padding-top: 5px;
+    }
+    .timer .days,
+    .timer .hours,
+    .timer .minutes,
+    .timer .seconds {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    
+@media (max-width: 540px) {
+	.btn-lg {
+		width: 250px;
+	}
+	.project-figure {
+		text-align: center;
+	}
+}
+@media (max-width: 400px) {
+
+	.show-menu {
+		right: 10px;
+	}
+	.intro-body h1 > a {
+		font-size: 40px;
+		padding: 10px 25px;
+	}
+}

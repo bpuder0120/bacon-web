@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: havebacon_development
+  pool: 5
+  username: bradpuder
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: havebacon_test
+  pool: 5
+  username: bradpuder
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: havebacon_production
+  pool: 5
+  username: 
+  password:

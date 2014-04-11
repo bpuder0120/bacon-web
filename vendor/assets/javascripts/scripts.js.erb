@@ -1,0 +1,135 @@
+/*---------- Navigation ----------*/
+$('.show-menu a, .hide-menu a').tooltip();
+// show/hide menu
+$('.show-menu a').on('click', function(e) {
+    e.preventDefault();
+    $(this).fadeOut(100, function(){ $('nav').slideDown(); $('.show-menu a').tooltip('hide'); });
+});
+$('.hide-menu a').on('click', function(e) {
+    e.preventDefault();
+    $('nav').slideUp(function(){ $('.show-menu a').fadeIn(); });
+});
+// navigation
+$('nav a').on('click', function(e) {
+    e.preventDefault();
+    var element_class = $(this).attr('class');
+    var scroll_to = 0;
+    var nav_height = $('nav').height();
+    if(element_class == 'nav-top') { scroll_to = $("#intro").offset().top; }
+    else if(element_class == 'nav-subscribe') { scroll_to = $("#subscribe").offset().top - nav_height - 0; }
+    else if(element_class == 'nav-project') { scroll_to = $("#project").offset().top - nav_height - -1; }
+    else if(element_class == 'nav-testimonials') { scroll_to = $("#reviews").offset().top - nav_height - 0; }
+    else if(element_class == 'nav-about') { scroll_to = $("#team").offset().top - nav_height - -1; }
+    else if(element_class == 'nav-contact') { scroll_to = $("#contact").offset().top - nav_height - 0; }
+    
+    if($(window).scrollTop() != scroll_to && element_class !== undefined) {
+            $('html, body').animate({scrollTop: scroll_to}, 1000);
+    }
+});
+/*----------*/
+
+/*---------- Background slideshow ----------*/
+window.onload = function() {
+$('#intro').backstretch([
+    "<%= image_path 'bg/01.jpg' %>",
+    "<%= image_path 'bg/02.jpg' %>",
+    "<%= image_path 'bg/03.jpg' %>"
+], {fade: 750, duration: 4000});
+
+$('#project').backstretch("<%= image_path 'bg/07.jpg' %>");
+
+$('#team').backstretch("<%= image_path 'bg/04.jpg' %>");
+
+/*----------*/
+
+/*---------- Countdown ----------*/
+var now = new Date(2014, 4, 1, 0, 0, 0, 0);
+// now.valueOf();
+// var countTo = 25 * 24 * 60 * 60 * 1000 + now.valueOf();    
+$('.timer').countdown(now.valueOf(), function(event) {
+    $(this).find('.days').text(event.offset.totalDays);
+    $(this).find('.hours').text(event.offset.hours);
+    $(this).find('.minutes').text(event.offset.minutes);
+    $(this).find('.seconds').text(event.offset.seconds);
+});
+}
+/*----------*/
+
+/*---------- Reviews ----------*/
+$('.reviews-active').html('<p>' + $('.reviews-single:first p').html() + '</p>');
+$('.reviews-single:first .reviews-single-image img').css('opacity', '1');
+
+$('.reviews-single-image img').on('click', function() {
+    $('.reviews-single-image img').css('opacity', '0.5');
+    $(this).css('opacity', '1');
+    var new_testimonial_text = $(this).parent('.reviews-single-image').siblings('p').html();
+    $('.reviews-active p').fadeOut(300, function() {
+        $(this).html(new_testimonial_text);
+        $(this).fadeIn(400);
+    });
+});
+/*----------*/
+
+/*---------- Subscription Form ----------*/
+$('.success-message').hide();
+    $('.error-message').hide();
+
+    $('.subscribe form').submit(function(e) {
+    	e.preventDefault();
+        var postdata = $('.subscribe form').serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'php/subscribe.php',
+            data: postdata,
+            dataType: 'json',
+            success: function(json) {
+                if(json.valid == 0) {
+                    $('.success-message').hide();
+                    $('.error-message').hide();
+                    $('.error-message').html(json.message);
+                    $('.error-message').fadeIn();
+                }
+                else {
+                    $('.error-message').hide();
+                    $('.success-message').hide();
+                    $('.subscribe form').hide();
+                    $('.success-message').html(json.message);
+                    $('.success-message').fadeIn();
+                }
+            }
+        });
+    });
+/*----------*/
+
+/*---------- Contact Form ----------*/
+$('.contact-form form input[type="text"], .contact-form form textarea').on('focus', function() {
+    $('.contact-form form input[type="text"], .contact-form form textarea').removeClass('contact-error');
+});
+    $('.contact-form form').submit(function(e) {
+        e.preventDefault();
+    $('.contact-form form input[type="text"], .contact-form form textarea').removeClass('contact-error');
+    var postdata = $('.contact-form form').serialize();
+    $.ajax({
+        type: 'POST',
+        url: 'php/contact.php',
+        data: postdata,
+        dataType: 'json',
+        success: function(json) {
+            if(json.emailMessage != '') {
+                $('.contact-form form .contact-email').addClass('contact-error');
+            }
+            if(json.subjectMessage != '') {
+                $('.contact-form form .contact-subject').addClass('contact-error');
+            }
+            if(json.messageMessage != '') {
+                $('.contact-form form textarea').addClass('contact-error');
+            }
+            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '') {
+                $('.contact-form form').fadeOut('fast', function() {
+                    $('.contact-form').append('<p>Thanks for contacting us!<br>We will get back to you very soon.</p>');
+                });
+            }
+        }
+    });
+});
+/*----------*/
