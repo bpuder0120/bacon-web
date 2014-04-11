@@ -31,14 +31,14 @@ $('nav a').on('click', function(e) {
 /*---------- Background slideshow ----------*/
 window.onload = function() {
 $('#intro').backstretch([
-    "<%= image_path '01.jpg' %>",
-    "<%= image_path '02.jpg' %>",
-    "<%= image_path '03.jpg' %>"
+    "<%= image_path 'bg/01.jpg' %>",
+    "<%= image_path 'bg/02.jpg' %>",
+    "<%= image_path 'bg/03.jpg' %>"
 ], {fade: 750, duration: 4000});
 
-$('#project').backstretch("<%= image_path '07.jpg' %>");
+$('#project').backstretch("<%= image_path 'bg/07.jpg' %>");
 
-$('#team').backstretch("<%= image_path '04.jpg' %>");
+$('#team').backstretch("<%= image_path 'bg/04.jpg' %>");
 
 /*----------*/
 
