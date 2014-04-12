@@ -5,7 +5,7 @@ class InitialUsersController < ApplicationController
   def create
     i = InitialUser.new
     i.email = params["user"]["email"]
-    i.save
+    InitialUserMailer.signup(i).deliver if i.save
     render json: {response: "success"}
   end
 
