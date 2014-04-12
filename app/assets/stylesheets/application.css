@@ -14,7 +14,6 @@
  *= require default
  *= require media-queries
  *= require custom
- *= require_tree .
  *= require_self
  */
 
