@@ -5,6 +5,8 @@ gem 'rails', '4.0.3'
 
 gem 'pry-rails'
 
+gem 'rack-cors'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
